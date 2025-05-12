@@ -4,7 +4,6 @@
 import Link from "next/link";
 import { useLanguage } from "./contexts/LanguageContext";
 
-// Home page content translations
 const homeContent = {
   en: {
     hero: {
@@ -62,7 +61,6 @@ export default function Home() {
     <main className={`flex min-h-screen flex-col ${directionClass}`}>
       {/* Hero Section */}
       <div className="relative h-96 w-full">
-        {/* You can replace this with your actual garage image */}
         <div className="absolute inset-0 bg-gray-800 opacity-70"></div>
         <div className="relative flex flex-col items-center justify-center h-full text-white text-center px-4">
           <h1 className="text-4xl font-bold mb-4">{content.hero.heading}</h1>
