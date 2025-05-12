@@ -1,20 +1,30 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, isRTL } = useLanguage();
+
+  const t = translations[language];
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "he" : "en");
+  };
 
   return (
-    <nav className="bg-gray-800 text-white">
+    <nav
+      className={`bg-gray-800 text-white ${isRTL ? "text-right" : "text-left"}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and site name */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="font-bold text-xl">
-                Gabi & Aryeh&apos;s Auto Garage
-              </span>
+              <span className="font-bold text-xl">{t.siteName}</span>
             </Link>
           </div>
 
@@ -22,32 +32,40 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link href="/" className="px-3 py-2 rounded-md hover:bg-gray-700">
-                Home
+                {t.home}
               </Link>
               <Link
                 href="/about"
                 className="px-3 py-2 rounded-md hover:bg-gray-700"
               >
-                About
+                {t.about}
               </Link>
               <Link
                 href="/services"
                 className="px-3 py-2 rounded-md hover:bg-gray-700"
               >
-                Services
+                {t.services}
               </Link>
               <Link
                 href="/contact"
                 className="px-3 py-2 rounded-md hover:bg-gray-700"
               >
-                Contact
+                {t.contact}
               </Link>
               <Link
                 href="/jobs"
                 className="px-3 py-2 rounded-md hover:bg-gray-700"
               >
-                Jobs
+                {t.jobs}
               </Link>
+
+              {/* Language toggle button */}
+              <button
+                onClick={toggleLanguage}
+                className="px-3 py-2 rounded-md bg-gray-700 hover:bg-gray-600"
+              >
+                {t.switchLanguage}
+              </button>
             </div>
           </div>
 
@@ -93,32 +111,40 @@ const Navbar = () => {
               href="/"
               className="block px-3 py-2 rounded-md hover:bg-gray-700"
             >
-              Home
+              {t.home}
             </Link>
             <Link
               href="/about"
               className="block px-3 py-2 rounded-md hover:bg-gray-700"
             >
-              About
+              {t.about}
             </Link>
             <Link
               href="/services"
               className="block px-3 py-2 rounded-md hover:bg-gray-700"
             >
-              Services
+              {t.services}
             </Link>
             <Link
               href="/contact"
               className="block px-3 py-2 rounded-md hover:bg-gray-700"
             >
-              Contact
+              {t.contact}
             </Link>
             <Link
               href="/jobs"
               className="block px-3 py-2 rounded-md hover:bg-gray-700"
             >
-              Jobs
+              {t.jobs}
             </Link>
+
+            {/* Language toggle in mobile menu */}
+            <button
+              onClick={toggleLanguage}
+              className="block w-full text-left px-3 py-2 rounded-md bg-gray-700 hover:bg-gray-600"
+            >
+              {t.switchLanguage}
+            </button>
           </div>
         </div>
       )}

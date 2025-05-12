@@ -1,4 +1,3 @@
-// app/translations/index.ts
 export const translations = {
   en: {
     siteName: "Gabi & Aryeh's Auto Garage",
@@ -7,7 +6,7 @@ export const translations = {
     services: "Services",
     contact: "Contact",
     jobs: "Jobs",
-    switchToHebrew: "עברית",
+    switchLanguage: "עברית",
   },
   he: {
     siteName: "המוסך של גבי ואריה",
@@ -16,6 +15,6 @@ export const translations = {
     services: "שירותים",
     contact: "צור קשר",
     jobs: "דרושים",
-    switchToEnglish: "English",
+    switchLanguage: "English",
   },
 };
