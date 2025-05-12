@@ -1,4 +1,4 @@
-// Create this file at: components/Navbar.tsx
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 
