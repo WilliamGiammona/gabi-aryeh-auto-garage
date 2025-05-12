@@ -4,7 +4,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "@/app/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "המוסך של גבי ואריה",
+  title: "מושך גבי את אריה",
   description: "auto repair and maintenance",
 };
 
