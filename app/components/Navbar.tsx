@@ -62,7 +62,7 @@ const Navbar = () => {
               {/* Language toggle button */}
               <button
                 onClick={toggleLanguage}
-                className="px-3 py-2 rounded-md bg-gray-700 hover:bg-gray-600"
+                className="px-3 py-2 rounded-md bg-gray-700 hover:bg-gray-600 cursor-pointer"
               >
                 {t.switchLanguage}
               </button>
@@ -141,7 +141,7 @@ const Navbar = () => {
             {/* Language toggle in mobile menu */}
             <button
               onClick={toggleLanguage}
-              className="block w-full text-left px-3 py-2 rounded-md bg-gray-700 hover:bg-gray-600"
+              className="block w-full text-left px-3 py-2 rounded-md bg-gray-700 hover:bg-gray-600 cursor-pointer"
             >
               {t.switchLanguage}
             </button>
